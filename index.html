@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ODIN | AI Trading Intelligence</title>
     
-    <meta name="description" content="Omniscient Data & Intelligence Network. 90%+ probability AI setups. Join the Vanguard.">
-    <meta property="og:title" content="ODIN | AI-Native Trading Terminal">
-    <meta property="og:image" content="social-preview.png">
-    <meta name="twitter:card" content="summary_large_image">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
     
@@ -27,7 +22,146 @@
 
     <header class="pt-16 pb-8 text-center px-4">
         <p class="text-cyan-400 text-[10px] font-black tracking-[0.3em] uppercase mb-4">Final Calibration Sequence</p>
-        <div id="big-timer" class="heading-font text-5xl md:text-8xl font-bold tracking-tighter text-white animate-pulse-slow">
-            00:00:00:00
+        <div id="big-timer" class="heading-font text-5xl md:text-8xl font-bold tracking-tighter text-white animate-pulse-slow">00:00:00:00</div>
+        <p class="text-gray-500 text-xs mt-4 uppercase tracking-widest italic">Vanguard Gates Open March 30th, 2026</p>
+    </header>
+
+    <nav class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center glow-cyan">
+                <span class="font-bold text-black text-xl italic">O</span>
+            </div>
+            <span class="heading-font text-2xl font-bold tracking-tighter italic uppercase">Odin</span>
         </div>
-        <p class="text-gray-500 text-
+        <select id="lang-select" onchange="updateLocalization(this.value)" class="glass text-gray-400 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-lg outline-none cursor-pointer">
+            <option value="en">USD 🇺🇸</option>
+            <option value="fr">EUR 🇫🇷</option>
+            <option value="es">MXN 🇲🇽</option>
+            <option value="ca">CAD 🇨🇦</option>
+            <option value="zh">CNY 🇨🇳</option>
+        </select>
+    </nav>
+
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        <div class="text-center mb-8">
+            <h2 class="heading-font text-3xl font-bold italic uppercase tracking-tighter">Test the <span class="text-cyan-400">Odin Terminal</span></h2>
+            <p class="text-gray-500 text-sm mt-2 uppercase tracking-widest">Interactive Beta Engine</p>
+        </div>
+        <div class="glass p-2 rounded-[2.5rem] glow-cyan h-[500px] border border-cyan-500/20 overflow-hidden">
+            <div id="tradingview_odin" style="height:100%;width:100%"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+                "autosize": true, "symbol": "BINANCE:BTCUSDT", "interval": "60", "timezone": "Etc/UTC",
+                "theme": "dark", "style": "1", "locale": "en", "backgroundColor": "#050A18",
+                "gridColor": "rgba(42, 46, 57, 0.06)", "container_id": "tradingview_odin"
+            });
+            </script>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-4">
+        <div id="form-container" class="max-w-lg mx-auto mb-16 glass p-8 rounded-[2rem] hidden border-cyan-500/30 glow-cyan">
+            <h4 id="form-status" class="heading-font text-cyan-400 mb-4 font-bold uppercase italic text-center text-xl tracking-widest">Claim Access</h4>
+            <input id="vanguard-email" type="email" placeholder="Your best email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl mb-4 outline-none focus:border-cyan-500 text-white placeholder:text-gray-600">
+            <button onclick="submitToGoogleSheet()" class="w-full bg-white text-black font-black py-4 rounded-xl uppercase tracking-widest hover:bg-cyan-400 transition-all">Submit Selection</button>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-10">
+        <div class="grid md:grid-cols-3 gap-8 items-end">
+            
+            <div class="glass p-8 rounded-[2.5rem] flex flex-col border-white/5">
+                <h3 class="heading-font text-xl font-bold mb-2 italic uppercase opacity-50">Free Warrior</h3>
+                <div class="text-4xl font-bold mb-6 text-white">$0.00</div>
+                <ul class="text-[10px] space-y-4 text-gray-500 mb-8 flex-1 uppercase tracking-widest font-bold">
+                    <li class="line-through opacity-30">Real-Time Quotes</li>
+                    <li>✓ 15-Minute Delayed Data</li>
+                    <li class="line-through opacity-30">AI Pattern Recognition</li>
+                    <li>✓ Standard Charting Tools</li>
+                    <li>✓ 3 Indicators per Layout</li>
+                    <li>✓ 1 Active Watchlist</li>
+                </ul>
+                <button onclick="selectPlan('FREE')" class="w-full py-4 glass border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10">Join Free</button>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] flex flex-col premium-border scale-105 shadow-2xl relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-400 text-black text-[9px] font-black py-1 px-4 rounded-full uppercase">50% Vanguard Discount</div>
+                <h3 class="heading-font text-xl font-bold mb-2 italic uppercase text-white">Vanguard Plus</h3>
+                <div class="text-4xl font-bold mb-6 text-cyan-400 plan-price" data-base="25.45">$25.45</div>
+                <ul class="text-[10px] space-y-4 text-gray-300 mb-8 flex-1 uppercase tracking-widest font-bold">
+                    <li class="text-cyan-400">✓ Zero-Latency Quotes</li>
+                    <li class="text-cyan-400">✓ Full AI Scan Engine</li>
+                    <li>✓ 90%+ Probability Filters</li>
+                    <li>✓ Unlimited AI Patterns</li>
+                    <li>✓ Valkyrie Strategy Library</li>
+                    <li>✓ Multi-Device Sync</li>
+                </ul>
+                <button onclick="selectPlan('PLUS_VANGUARD')" class="w-full py-4 bg-cyan-400 text-black font-black rounded-xl text-[10px] uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all">Claim 50% Off</button>
+            </div>
+
+            <div class="glass p-8 rounded-[2.5rem] flex flex-col border-white/10">
+                <h3 class="heading-font text-xl font-bold mb-2 italic uppercase">Elite</h3>
+                <div class="text-4xl font-bold mb-6 text-gray-400 plan-price" data-base="50.80">$50.80</div>
+                <ul class="text-[10px] space-y-4 text-gray-400 mb-8 flex-1 uppercase tracking-widest font-bold">
+                    <li>✓ Everything in Plus</li>
+                    <li class="text-white">✓ Ragnarok Risk Alerts</li>
+                    <li>✓ Order Flow Analysis</li>
+                    <li>✓ Custom AI Model Training</li>
+                    <li>✓ Private Alpha Discord</li>
+                    <li>✓ 1-on-1 Strategy Setup</li>
+                </ul>
+                <button onclick="selectPlan('ELITE_VANGUARD')" class="w-full py-4 glass rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10">Go Elite</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="max-w-7xl mx-auto px-8 pb-12 mt-20 text-[9px] text-gray-600 uppercase tracking-[0.3em] text-center border-t border-white/5 pt-12 leading-loose">
+        <p>Market Data is delayed 15m on Free Plan. AI Scans are disabled for Free Warriors. <br> © 2026 ODIN Intelligence. | The Eye Sees All.</p>
+    </footer>
+
+    <script>
+        const webAppUrl = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"; // PASTE YOUR URL HERE
+        const launchDate = new Date("March 30, 2026 00:00:00").getTime();
+        const surcharge = 1.025;
+        let selectedPlan = "FREE";
+
+        function updateLocalization(lang) {
+            const rates = { en: 1, fr: 0.84, es: 17.13, ca: 1.37, zh: 6.91 };
+            const symbols = { en: "$", fr: "€", es: "$", ca: "$", zh: "¥" };
+            document.querySelectorAll('.plan-price').forEach(el => {
+                const base = parseFloat(el.getAttribute('data-base'));
+                el.innerHTML = `${symbols[lang]}${(base * rates[lang] * surcharge).toFixed(2)}<span class="text-xs text-gray-500">/mo</span>`;
+            });
+        }
+
+        setInterval(() => {
+            const d = launchDate - new Date().getTime();
+            const days = Math.floor(d / (1000 * 60 * 60 * 24));
+            const hrs = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            const mins = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            const secs = Math.floor((d % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            document.getElementById("big-timer").innerHTML = `${days}:${hrs}:${mins}:${secs}`;
+        }, 1000);
+
+        function selectPlan(plan) {
+            selectedPlan = plan;
+            const fc = document.getElementById('form-container');
+            fc.classList.remove('hidden');
+            fc.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('form-status').innerText = plan === 'FREE' ? "Join as Free Warrior" : "Reserve 50% Discount";
+        }
+
+        async function submitToGoogleSheet() {
+            const email = document.getElementById('vanguard-email').value;
+            if (!email || !email.includes('@')) return alert("Enter valid email.");
+            document.getElementById('form-status').innerText = "Calibrating...";
+            try {
+                await fetch(webAppUrl, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ email, plan: selectedPlan }) });
+                document.getElementById('form-container').innerHTML = `<div class="text-center py-8 text-cyan-400 font-bold uppercase italic tracking-[0.2em] animate-pulse">Access Confirmed. Welcome to the Vanguard.</div>`;
+            } catch (err) { alert("Connectivity Lost. Try again."); }
+        }
+    </script>
+</body>
+</html>
