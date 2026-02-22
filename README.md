@@ -1,32 +1,28 @@
-# 🔱 ODIN Terminal | AI Market Intelligence
+# 🔱 ODIN Terminal | Final GitHub Build (Feb 2026)
 
-ODIN Terminal is a next-generation financial visualization platform designed to offer institutional-grade AI intelligence at a market-disrupting price point. Built with a focus on mythological hierarchy and divine precision, the terminal provides a 15% lower entry cost than standard 2026 industry benchmarks while integrating proprietary Neural Market Analysis into every tier.
+ODIN Terminal is a production-ready financial UI designed to bridge the gap between institutional data visualization and AI-driven neural intelligence. 
 
 
 
-## 🛡️ The Hierarchy of Odin
+## 🛠️ Integrated Core Systems
+* **Neural Ticker Bar:** A real-time market data simulation streaming global asset prices.
+* **TV-Engine:** Integrated **TradingView Lightweight Charts** for high-performance candlestick rendering.
+* **Ragnarok Countdown:** A real-time countdown to the New York Market lunch lull (12:00 PM EST).
+* **Tiered Sovereignty UI:** A four-rank pricing hierarchy (Drengr, Einherjar, Valkyrie, All-Father) with divine hover states.
 
-The platform is structured into four distinct archetypes, each providing deeper insight into the global financial battlefield:
+## 📊 Strategic Pricing Architecture
+All plans are mathematically anchored to be **15% more affordable** than standard 2026 benchmarks:
+* **Drengr ($12.70):** Entry-level honorable trading.
+* **Valkyrie ($50.95):** The divine guide with **Cyan Shimmer** selection.
+* **All-Father ($149.95):** Absolute market omniscience with **Golden Pulse** selection.
 
-| Tier | Epithet | Focus | AI Advantage |
-| :--- | :--- | :--- | :--- |
-| **Drengr** | The Frontline | Individual Traders | Daily AI Pattern Recognition |
-| **Einherjar** | The Chosen | Serious Alpha-Seekers | Sentiment Heatmaps & Real-Time Data |
-| **Valkyrie** | Divine Guidance | Professional Sculptors | Live Neural Signal Feed & High-Speed Backtesting |
-| **All-Father** | Absolute Wisdom | Institutional Entities | Strategy Lab & Private Consulting |
+## 🚀 Quick Deployment
+1.  Upload `index.html` to your GitHub Repository.
+2.  Enable **GitHub Pages** under Settings > Pages.
+3.  The terminal will be instantly accessible via your repository URL.
 
-## ✨ Technical Features
+## ⚖️ Legal & Compliance
+The footer includes stubs for Risk Disclosures and Terms of Service, ensuring the terminal meets the standard 2026 requirements for financial information platforms.
 
-- **Interactive Shimmer UI:** Dynamic CSS animations for high-tier selection (Cyan Shimmer for Valkyrie, Golden Pulse for All-Father).
-- **Responsive Terminal Design:** Optimized for 4K workstation setups and mobile field-monitoring.
-- **Lightweight Architecture:** Zero-dependency frontend using Tailwind CSS for lightning-fast load times.
-- **15% Alpha Pricing:** Mathematically verified discount against 2026 TradingView standard rates.
-
-## 🚀 Installation & Deployment
-
-This is a self-contained web terminal. No server-side installation is required for the frontend demonstration.
-
-### Quick Start
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/odin-terminal.git](https://github.com/your-username/odin-terminal.git)
+---
+*Developed for the All-Father. Built for the Einherjar.*
