@@ -1,0 +1,59 @@
+<section class="max-w-7xl mx-auto px-8 py-20">
+    <div id="form-container" class="max-w-lg mx-auto mb-16 glass p-6 rounded-2xl hidden animate-pulse">
+        <h4 class="heading-font text-cyan-400 mb-2 font-bold uppercase">Finalizing your access...</h4>
+        <input id="vanguard-email" type="email" placeholder="Enter your email" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl mb-4 outline-none focus:border-cyan-500">
+        <button onclick="submitToGoogleSheet()" class="w-full bg-cyan-500 text-black font-black py-4 rounded-xl uppercase tracking-widest">Confirm Membership</button>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-[2.5rem] flex flex-col hover:border-cyan-500/30 transition-all">
+            <h3 class="heading-font text-xl font-bold mb-2 italic">ESSENTIAL</h3>
+            <div class="text-4xl font-bold mb-6 text-cyan-400 plan-price" data-base="13.45">$13.45</div>
+            <button onclick="selectPlan('ESSENTIAL')" class="w-full py-4 glass rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10">Select Tier</button>
+        </div>
+
+        <div class="glass p-8 rounded-[2.5rem] flex flex-col premium-border scale-105 shadow-2xl">
+            <div class="bg-cyan-500 text-black text-[9px] font-black py-1 px-3 rounded-full self-start mb-4 uppercase">Most Popular</div>
+            <h3 class="heading-font text-xl font-bold mb-2 italic text-white">PLUS</h3>
+            <div class="text-4xl font-bold mb-6 text-white plan-price" data-base="25.45">$25.45</div>
+            <button onclick="selectPlan('PLUS')" class="w-full py-4 bg-cyan-500 text-black font-black rounded-xl text-[10px] uppercase tracking-widest hover:bg-cyan-400">Join Vanguard</button>
+        </div>
+
+        <div class="glass p-8 rounded-[2.5rem] flex flex-col">
+            <h3 class="heading-font text-xl font-bold mb-2 italic">PREMIUM</h3>
+            <div class="text-4xl font-bold mb-6 text-gray-300 plan-price" data-base="50.80">$50.80</div>
+            <button onclick="selectPlan('PREMIUM')" class="w-full py-4 glass rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10">Go Elite</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    let selectedPlan = "";
+    const webAppUrl = https://script.google.com/macros/s/AKfycbx8ZDCynZiZpPetbOvFcEOjozXdgUo_685ERpuh2Qb11quk-TQtq95gXbSCfobYvsi0/exec
+
+    function selectPlan(plan) {
+        selectedPlan = plan;
+        document.getElementById('form-container').classList.remove('hidden');
+        window.scrollTo({ top: document.getElementById('form-container').offsetTop - 100, behavior: 'smooth' });
+    }
+
+    async function submitToGoogleSheet() {
+        const email = document.getElementById('vanguard-email').value;
+        if (!email) return alert("All-Father requires an email.");
+
+        const response = await fetch(webAppUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Critical for Google Apps Script
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, plan: selectedPlan })
+        });
+
+        document.getElementById('form-container').innerHTML = `
+            <div class="text-center py-8">
+                <h3 class="heading-font text-2xl text-cyan-400 italic uppercase">Welcome to the Vanguard</h3>
+                <p class="text-gray-400 mt-2">Your 50% discount is reserved. Watch your inbox.</p>
+            </div>
+        `;
+    }
+</script>
